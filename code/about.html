@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>chi</title>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="about.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+		<!--link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script-->
+		<script>
+			$(document).ready(function() {
+				$("body").addClass("animated fadeIn");
+				$(".bio").addClass("animated rotateIn");
+				
+				 $('.contact').hover(
+					function () {
+						$(".menu-overlay").css("visibility", "visible");
+					}, 
+					function () {
+						$(".menu-overlay").css("visibility","hidden");
+					}
+				);
+			});
+		</script>
+	</head>
+	<body>
+		
+		<div class="main">
+			<div class="bio" id="about"><img class="profile-img" src='srseimin.jpg'/>
+				<h3 class="header"><span style="font-size:40px">吳曉琪</span>HSIAO-CHI WU</h3>
+				<p>
+					輔仁大學 / 資工系103級
+				</p>
+				<a class="bio-link" href="https://github.com/hsiao-chi">Github<i class="fa fa-github"></i></a>
+				<a class="bio-link" href="https://linkedin.com/in/曉琪-吳-211235a4">LinkedIn<i class="fa fa-codepen"></i></a>
+			</div>
+			<div class="contact">
+				<div class="menu-overlay">
+					<ul>
+						 <li onclick="self.location.href='about.html'">about me</li> 
+						 <li>history</li>
+						 <li onclick="self.location.href='animates.html'">animates</li> 
+						 <li>draw</li>
+					</ul>
+				</div>
+				
+		  </div>
+		</div>
+	</body>
+</html>

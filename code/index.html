@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>chi</title>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+		<script>
+			
+			$(document).ready(function() {      
+				 $('.dc-menu-trigger').click(function(){
+					$('nav').toggleClass( "dc-menu-open" );
+					$('.menu-overlay').toggleClass( "open" );
+					$('header').toggleClass( "shownav" );
+				 }); 
+			});
+  
+		</script>
+	</head>
+	<body>
+		<h1 style="text-align:center">CHI</h1>
+		<header id="header">
+		<nav class="dc-menu">
+			<a href="#" class="dc-menu-trigger"><span>Menu</span></a>
+			<div class="menu-overlay">
+				<ul>
+					 <li onclick="self.location.href='about.html'">about me</li> 
+					 <li>history</li>
+					 <li onclick="self.location.href='animates.html'">animates</li> 
+					 <li>draw</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>chi</title>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="about.css">
+		<link rel="stylesheet" type="text/css" href="animates.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+		
+		<!--link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("body").addClass("animated fadeIn");
+				 $('.contact').hover(
+					function () {
+						$(".menu-overlay").css("visibility", "visible");
+					}, 
+					function () {
+						$(".menu-overlay").css("visibility","hidden");
+					}
+				);
+				$.getJSON("animate.json", function(json) {
+					$("#list").html(JSON.stringify(json));
+				});
+				
+			});
+			
+		</script>
+	</head>
+	<body>
+		
+		<div class="main">
+				
+			<div id ="ilst">
+				
+			</div>
+			
+			<div class="contact">
+				<div class="menu-overlay">
+					<ul>
+						 <li onclick="self.location.href='about.html'">about me</li> 
+						 <li>history</li>
+						 <li onclick="self.location.href='animates.html'">animates</li> 
+						 <li>draw</li>
+					</ul>
+				</div>
+				
+		  </div>
+		</div>
+	</body>
+</html>
