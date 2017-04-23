@@ -103,7 +103,9 @@ var animates = '									 \
 }                                                    \
 ';
 
-var obj = JSON.parse(animates);
+var obj = JSON.parse(animates,function(key,value){
+	return value;
+});
 
-$("#tab-2").append("<p>Test</p>");
-
+document.getElementById("list").innerHTML = obj.anim[0].type;
+alert( obj.anim );

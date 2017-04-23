@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>chi</title>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="about.css">
+		<link rel="stylesheet" type="text/css" href="draw.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+		<!--link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script-->
+		<script>
+			$(document).ready(function() {
+				$("body").addClass("animated fadeIn");
+				$(".bio").addClass("animated rotateIn");
+				
+				 $('.contact').hover(
+					function () {
+						$(".menu-overlay").css("visibility", "visible");
+					}, 
+					function () {
+						$(".menu-overlay").css("visibility","hidden");
+					}
+				);
+				
+			});
+			jQuery(document).ready(function ($) {
+
+				var slideCount = $('#slider ul li').length;
+				var slideWidth = $('#slider ul li').width();
+				var slideHeight = $('#slider ul li').height();
+				var sliderUlWidth = slideCount * slideWidth;
+				
+				$('#slider').css({ width: slideWidth, height: slideHeight });
+				
+				$('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+				
+				$('#slider ul li:last-child').prependTo('#slider ul');
+
+				function moveLeft() {
+					$('#slider ul').animate({
+						left: + slideWidth
+					}, 200, function () {
+						$('#slider ul li:last-child').prependTo('#slider ul');
+						$('#slider ul').css('left', '');
+					});
+				};
+
+				function moveRight() {
+					$('#slider ul').animate({
+						left: - slideWidth
+					}, 200, function () {
+						$('#slider ul li:first-child').appendTo('#slider ul');
+						$('#slider ul').css('left', '');
+					});
+				};
+
+				$('a.control_prev').click(function () {
+					moveLeft();
+				});
+
+				$('a.control_next').click(function () {
+					moveRight();
+				});
+
+			});    
+
+		</script>
+	</head>
+	<body>
+		
+		<div class="main">
+
+			<div id="slider">
+			  <a href="#" class="control_next">></a>
+			  <a href="#" class="control_prev"><</a>
+			  <ul>
+				<li><img src='srseimin.jpg' style="width:600px;"/></li>
+				<li><img src='https://i.imgur.com/CttEOKk.jpg' style="width:600px;"/></li>
+				<li ><img src='bloody1.png' style="width:600px;"/></li>
+				<li><img src='https://images.plurk.com/2hK9kl7zUJogyHGa4Zh9VU.jpg' style="height:400px;"/></li>
+				<li ><img src='https://images.plurk.com/4MeFfZyPxBtm8R1B4d5c9O.jpg' style="width:600px;"/></li>
+				<li ><img src='https://i.imgur.com/Gc5oMtI.jpg' style="width:600px;"/></li>
+			  </ul>  
+			</div>
+
+
+			<div class="contact" >
+				<div class="menu-overlay">
+					<ul>
+						 <li onclick="self.location.href='about.html'">about me</li> 
+						 <li>history</li>
+						 <li onclick="self.location.href='animates.html'">animates</li> 
+						 <li onclick="self.location.href='draw.html'">draw</li>
+					</ul>
+				</div>
+				
+		  </div>
+		</div>
+	</body>
+</html>

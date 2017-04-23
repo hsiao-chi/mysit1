@@ -8,9 +8,9 @@
 		<link rel="stylesheet" type="text/css" href="animates.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-		
+		<script src="con_json.js">
 		<!--link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"-->
-		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<!--script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script-->
 		<script>
 			$(document).ready(function() {
 				$("body").addClass("animated fadeIn");
@@ -22,9 +22,7 @@
 						$(".menu-overlay").css("visibility","hidden");
 					}
 				);
-				$.getJSON("animate.json", function(json) {
-					$("#list").html(JSON.stringify(json));
-				});
+				
 				
 			});
 			
@@ -44,7 +42,7 @@
 						 <li onclick="self.location.href='about.html'">about me</li> 
 						 <li>history</li>
 						 <li onclick="self.location.href='animates.html'">animates</li> 
-						 <li>draw</li>
+						 <li onclick="self.location.href='draw.html'">draw</li>
 					</ul>
 				</div>
 				
